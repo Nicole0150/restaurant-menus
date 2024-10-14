@@ -14,6 +14,7 @@ describe('Restaurant and Menu Models', () => {
         // by setting 'force:true' the tables are recreated each time the 
         // test suite is run
         await sequelize.sync({ force: true });
+        await Restaurant.bulkCreate(seedRestaurant);
     });
 
     test('can create a Restaurant', async () => {
